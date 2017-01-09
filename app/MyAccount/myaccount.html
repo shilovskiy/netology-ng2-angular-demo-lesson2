@@ -1,0 +1,48 @@
+<style>
+    .ng-dirty.ng-invalid {
+        border-color: #FA787E;
+    }
+
+    .ng-dirty.ng-valid {
+        border-color: #78FA89;
+    }
+
+</style>
+
+<form name="vm.accountForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" data-ng-model="vm.currentAcc.Name" type="text" placeholder="Имя" required name="Name">
+    </div>
+
+    <div ng-messages="vm.accountForm.accountName.$error" ng-if="vm.accountForm.accountName.$dirty">
+
+        <div ng-message="required" class="alert alert-danger" role="alert">Обязательно укажите имя</div>
+
+    </div>
+
+    <div class="form-group">
+    <label>E-mail</label>
+    <input class="form-control" data-ng-model="vm.currentAcc.Email" type="email" placeholder="Email" name="accountEmail">
+    </div>
+
+    <div role="alert" ng-messages="vm.accountForm.accountEmail.$error" ng-if="vm.accountForm.accountEmail.$dirty">
+        <div ng-message="email" class="alert alert-danger">В том поле должен быть Email адрес</div>
+    </div>
+
+    <div class="form-group">
+        <label>Телефон</label>
+        <input class="form-control" data-ng-model="vm.currentAcc.PhoneNumber" type="text" placeholder="Ваше номер телефона в формате +7(964) 345-4544" data-ng-pattern="/^(\+\d.+)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/" name="accountPhone">
+    </div>
+
+    <div role="alert" ng-messages="vm.accountForm.accountPhone.$error" ng-if="vm.accountForm.accountPhone.$dirty">
+        <div ng-message="pattern" class="alert alert-danger">В том поле должен быть Номер телефона в формате +7(964) 345-4544</div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-default" data-ng-click="vm.saveCurrentAccount(vm.currentAcc)" data-ng-disabled="vm.accountForm.$invalid">Сохранить
+    </button>
+
+
+</form>
