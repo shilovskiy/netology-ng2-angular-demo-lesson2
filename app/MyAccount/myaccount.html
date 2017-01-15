@@ -11,14 +11,14 @@
 
 <form name="vm.accountForm" novalidate>
     <div class="form-group">
-        <label>Имя</label>
-        <input class="form-control" data-ng-model="vm.currentAcc.Name" type="text" placeholder="Имя" required name="Name">
+        <label>[Имя]</label>
+        <input class="form-control" data-ng-model="vm.currentAcc.Name" type="text" placeholder="Имя" required  ng-minlength="3" name="accountName">
     </div>
 
     <div ng-messages="vm.accountForm.accountName.$error" ng-if="vm.accountForm.accountName.$dirty">
 
         <div ng-message="required" class="alert alert-danger" role="alert">Обязательно укажите имя</div>
-
+        <div ng-message="minlength" class="alert alert-danger" role="alert">Имя слишком короткое</div>
     </div>
 
     <div class="form-group">

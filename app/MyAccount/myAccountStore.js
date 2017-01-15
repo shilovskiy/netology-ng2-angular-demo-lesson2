@@ -19,7 +19,7 @@ angular
             },
             saveAccount(item) {
                 account = {
-                    "Name": item.Name,
+                    "Name": item.accountName,
                     "Email": item.Email,
                     "PhoneNumber": item.PhoneNumber
                 };
