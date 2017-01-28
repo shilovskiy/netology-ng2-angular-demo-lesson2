@@ -4,8 +4,7 @@
 angular.module('myApp', [
     'ui.router',
     'ngMessages'
-]).
-config(function($stateProvider) {
+]).config(function ($stateProvider) {
 
     $stateProvider
         .state({
@@ -26,16 +25,17 @@ config(function($stateProvider) {
             templateUrl: 'PokemonDetail/PokemonDetail.html',
             controller: 'PokemonDetailCtrl as vm'
         }).state({
-            name: 'detail.edit',
-            url: '/edit',
-            parent: 'detail',
-            templateUrl: 'PokemonDetail/PokemonDetailEdit.html',
-            controller: function() {}
-        })
+        name: 'detail.edit',
+        url: '/edit',
+        parent: 'detail',
+        templateUrl: 'PokemonDetail/PokemonDetailEdit.html',
+        controller: function () {
+        }
+    })
         .state({
-        name: 'myaccount',
-        url: '/myaccount',
-        templateUrl: 'MyAccount/myaccount.html',
-        controller: 'myAccountCtrl as vm'
-    });
+            name: 'myaccount',
+            url: '/myaccount',
+            templateUrl: 'MyAccount/myaccount.html',
+            controller: 'myAccountCtrl as vm'
+        });
 });

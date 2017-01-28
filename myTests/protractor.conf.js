@@ -1,7 +1,9 @@
-//jshint strict: false
+
+
 exports.config = {
   framework: 'jasmine',
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: [
     '*.js'
   ],
@@ -10,12 +12,11 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  baseUrl: 'http://localhost:8000/',
-    allScriptsTimeout: 11000,
+  baseUrl: 'http://localhost:8000',
+    allScriptsTimeout: 360000,
 
 
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
+    defaultTimeoutInterval: 300000
   }
-
 };
